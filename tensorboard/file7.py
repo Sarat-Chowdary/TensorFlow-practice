@@ -1,6 +1,5 @@
 import os
 
-os.environ["TF_CPP_MIN_LOG_LEVEL"] = "2"
 
 import io
 import tensorflow as tf
@@ -14,6 +13,7 @@ from tensorflow.keras import layers
 from utils import plot_to_projector
 
 # Make sure we don't get any GPU errors
+os.environ["TF_CPP_MIN_LOG_LEVEL"] = "2"
 physical_devices = tf.config.list_physical_devices("GPU")
 tf.config.experimental.set_memory_growth(physical_devices[0], True)
 
